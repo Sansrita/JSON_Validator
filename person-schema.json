@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://neuralnine.com/my-person-schema",
+ "type": "object",
+ "properties": {
+    "id": {"type": "integer"},
+    "name": {"type": "string"},
+    "home_phone": {"type": "integer"},
+    "cell_phone": {"type": "integer"},
+    "birth_date": {"type": "string"},
+    "govt_id_number": {"type": "string"}
+ },
+ "anyOf": [
+    {"required": ["home_phone"]},
+    {"required": ["cell_phone"]}
+
+ ],
+ "oneOf": [
+    {"required": ["birth_date"]},
+    {"required": ["govt_id_number"]}
+ ],
+ "required": ["id", "name"]
+}
